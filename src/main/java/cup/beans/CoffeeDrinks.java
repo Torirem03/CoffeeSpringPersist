@@ -123,8 +123,15 @@ public class CoffeeDrinks {
 	/**
 	 * @param isIced the isIced to set
 	 */
-	public void setIced(boolean isIced) {
+	public void setIsIced(boolean isIced) {
 		this.isIced = isIced;
+	}
+	
+	/**
+	 * @param isIced the isIced to get
+	 */
+	public boolean getIsIced() {
+		return isIced;
 	}
 
 	@Override

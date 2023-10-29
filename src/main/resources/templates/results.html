@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Coffee Drinks</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentCoffeeDrinks : ${coffeedrinks}">
+<td th:text="${currentCoffeeDrinks.id}"/>
+<td th:text="${currentCoffeeDrinks.name}"/>
+<td th:text="${currentCoffeeDrinks.numShots}"/>
+<td th:text="${currentCoffeeDrinks.milkType}"/>
+<td th:text="${currentCoffeeDrinks.isIced}"/>
+<td><a th:href="@{/edit/{id}(id=${currentCoffeeDrinks.id})}">Edit</a></td>
+<td><a th:href="@{/delete/{id}(id=${currentCoffeeDrinks.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputCoffeeDrink">Add a new coffee drink</a>
+</body>
+</html>

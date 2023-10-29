@@ -18,7 +18,7 @@ public class BeanConfig {
 		bean.setName("Iced Machiatto");
 		bean.setMilkType("Steamed");
 		bean.setNumShots(2);
-		bean.setIced(true);
+		bean.setIsIced(true);
 		return bean;
 	}
 	
