@@ -3,9 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert New Coffee Drink</title>
+<script type = "text/javascript">
+      function validate() {
+      
+         if( document.coffeeForm.name.value == "" ) {
+            alert( "Please provide a name for the coffee!" );
+            event.preventDefault();
+            returnToPreviousPage();
+         }
+         if (isNaN(parseInt(document.coffeeForm.numShots.value))) {
+            alert( "A number 0-9 must be used" );
+            event.preventDefault();
+            returnToPreviousPage();
+         }
+         if( document.coffeeForm.milkType.value == "") {
+            
+            alert( "Please provide a milk type. Enter 'None' if no milk is needed" );
+            event.preventDefault();
+            returnToPreviousPage();
+         }
+         return( true );
+      }
+</script>
 </head>
 <body>
-<form th:object="${newCoffeeDrink}" th:action="@{/update/{id}(id=${newCoffeeDrink.id})}" method=POST>
+<form th:object="${newCoffeeDrink}" name="coffeeForm" th:action="@{/update/{id}(id=${newCoffeeDrink.id})}" onsubmit="validate();" method=POST>
 Name: <input name="name" size="20" th:field="*{name}"> <br />
 # of Shots: <input name="numShots" size="10" th:field="*{numShots}"><br />
 Milk Type: <input name="milkType" size="20" th:field="*{milkType}"><br />
